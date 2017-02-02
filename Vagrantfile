@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
     	s.privileged = false
     	s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
     end
+    config.vbguest.auto_update = false
 
     config.vm.provision :shell, path: "bootstrap.sh"
     config.vm.hostname = "magescotch"
